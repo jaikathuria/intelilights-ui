@@ -1,35 +1,23 @@
 import React, { Component } from 'react'
 import Sadak from './Sadak'
+import { fetchTraffic } from '../api-utils'
 
 export default class Chowk extends Component {
 	state = {
-		lanes: [
-			{
-				name: "Dakshin Marg - Chd Rd",
-				timer: 0,
-				count: 12,
-				id: 1
-			},
-			{
-				name: "Purv Marg - Chd Rd",
-				timer: 20,
-				count: 12,
-				id: 2
-			},
-			{
-				name: "Dakshin Marg",
-				timer: 12,
-				count: 6,
-				id: 3
-			},
-			{
-				name: "Purv Marg",
-				timer: 14,
-				count: 11,
-				id: 4
-			}
-		]
+		lanes: []
 	}
+
+	componentDidMount(){
+		this.getData()
+	}
+
+	getData(){
+		fetchTraffic()
+		.then( lanes => this.setState({
+			lanes
+		}))
+	}
+
 	render() { 
 		return (
 		<div>
@@ -46,8 +34,8 @@ export default class Chowk extends Component {
 			                  </div>
 			                  
 			                  {
-			                  	this.state.lanes.map((lane) => 
-			                  	(<Sadak lane={lane} key={lane.id}/>))
+			                  	this.state.lanes.map((lane) =>
+			                  		 <Sadak lane={lane} key={lane.id} newData={this.getData.bind(this) }/>)
 		              		  }
 			              </div>
 			          </div>

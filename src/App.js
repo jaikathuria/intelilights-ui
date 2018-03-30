@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { stack as Menu } from 'react-burger-menu'
-import Chowk from './components/Chowk'
+import Chowk  from './components/Chowk'
 
 // Import CSS
 import './App.css'
