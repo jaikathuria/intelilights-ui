@@ -10,11 +10,6 @@ import './App.css'
 
 class App extends Component {
   render() {
-    const style = {
-      width: '100vw',
-      height: '100vh'
-    }
-
     return (
     <div id="outer-container">
 
@@ -43,9 +38,9 @@ class App extends Component {
           exact
           path="/accident-map"
           render={()=>
-            <div style={style}>
+      
               <Map/>
-            </div>
+          
             
           }
         />
