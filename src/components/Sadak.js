@@ -5,46 +5,31 @@ export default class Sadak extends Component {
 		color: this.props.lane.running === true ? "green" : "red",
 		timer: this.props.lane.timer || 0
 	}
-
 	tick(){
 		const timer = this.state.timer - 1
-		
 		if (timer === 0) {
-			
-
 			if(this.state.color === "green"){
 				this.setState({
 					color: "yellow",
 					timer: 5
 				})
 			}
-
 			else if (this.state.color === "yellow"){
 				this.setState({
 					color: "red",
 					timer: 0
 				})
 			}
-			
 			else {
 				//fetch new data
 				this.props.newData()
 			}
-
-
-			
 		}
-
 		else if (timer > 0){
-
 			this.setState({
 				timer
 			})
-
 		}
-
-
-		
 	}
 
 	stopTimer() {
@@ -73,10 +58,8 @@ export default class Sadak extends Component {
 					color: "red"
 				})
 			}
-
 		}
 	}
-
 	render(){
 		const {name, count} = this.props.lane
 		const {timer} = this.state

@@ -103,3 +103,28 @@
 .dummy {
   padding-bottom: 80px;
 }
+.margin-left {
+    display: flex;
+    width: 100%;
+}
+
+.card-header {
+  color: #999999;
+  margin: 0;
+  font-size: 14px;
+  margin-top: 0;
+  padding-top: 10px;
+  margin-bottom: 0;
+  background-color: transparent;
+   border-bottom: none;
+}
+
+.card-content {
+  color: #3C4858;
+  margin-top: 0px;
+  min-height: auto;
+  font-weight: 300;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  margin-bottom: 3px;
+  text-decoration: none;
+}

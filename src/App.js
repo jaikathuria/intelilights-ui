@@ -23,7 +23,7 @@ class App extends Component {
         <header>
           <nav className="navbar navbar-light bg-light text-center fixed-top shadow text-center">
             <a className="navbar-brand margin-auto">
-              Inteli<span className="bold">Lights</span> v0.5
+              Inte<span className="bold">Lights</span> v0.5
             </a>
           </nav>
         </header> 
