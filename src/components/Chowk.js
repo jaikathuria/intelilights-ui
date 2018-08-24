@@ -30,21 +30,30 @@ var bugs = [
 
 
 export default class Chowk extends Component {
+
 	state = {
 		lanes: []
 	}
-
 	componentDidMount(){
-		this.getData()
+		fetchTraffic()
+			.then(lanes => this.haveAllRed(lanes))
+		
 	}
-
 	getData(){
 		fetchTraffic()
 		.then( lanes => this.setState({
 			lanes
 		}))
 	}
-
+	haveAllRed(lanes){
+		if(lanes.filter(lane => lane.running).lenth === 0){
+			fetchTraffic()
+			.then(lanes => this.haveAllRed(lanes))
+		}
+		else {
+			this.getData()
+		}
+	}
 	render() { 
 		return (
 		<div>

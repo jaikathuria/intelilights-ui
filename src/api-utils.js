@@ -3,6 +3,7 @@ const TOKEN  = "593370798:AAFAxBJE5jeqIncli1bT9FgAdqcL1Qi7MmI"
 
 export const fetchTraffic = () => fetch(`${BASE_URL}/traffic-data`)
 		.then( res => res.json() )
+		.catch(() => ({lanes: []}))
 		.then( data => data.lanes )
 
 
