@@ -46,12 +46,12 @@ export default class Chowk extends Component {
 		}))
 	}
 	haveAllRed(lanes){
-		if(lanes.filter(lane => lane.running).lenth === 0){
+		this.setState({
+			lanes
+		})
+		if(lanes.filter(lane => lane.running).length === 0){
 			fetchTraffic()
 			.then(lanes => this.haveAllRed(lanes))
-		}
-		else {
-			this.getData()
 		}
 	}
 	render() { 
@@ -93,7 +93,7 @@ export default class Chowk extends Component {
 							<Update />
 							Just Updated
 							</div>
-						</CardFooter>
+			          			</CardFooter>
 						</Card>
 					</GridItem>
 					<GridItem xs={12} sm={12} md={6}>
